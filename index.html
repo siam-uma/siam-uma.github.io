@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIAM - Sindicato de Apoyo Mutuo de la UMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #CC4441;
+            --secondary-color: #a83633;
+            --accent-color: #1EA04F;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --background-light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, rgba(204, 68, 65, 0.08) 0%, rgba(30, 160, 79, 0.08) 100%);
+            border-bottom: 3px solid var(--primary-color);
+            color: var(--text-dark);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background: var(--secondary-color);
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--background-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Values Section */
+        .values {
+            background: var(--background-light);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .value-item h3 {
+            color: var(--secondary-color);
+            margin: 1rem 0;
+            font-size: 1.3rem;
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="siam_logo.png" alt="SIAM Logo">
+                <span class="logo-text">SIAM UMA</span>
+            </div>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>Sindicato de Apoyo Mutuo de la UMA</h1>
+        <p>Defendiendo los derechos laborales y el bienestar de todos los trabajadores universitarios</p>
+        <a href="#contacto" class="btn">Únete a Nosotros</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <h2>¿Quiénes Somos?</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    <strong>SIAM</strong> es el Sindicato de Apoyo Mutuo de la Universidad de Málaga, 
+                    una organización comprometida con la defensa de los derechos laborales del personal docente, 
+                    investigador y de administración y servicios de nuestra universidad.
+                </p>
+                <p>
+                    Fundado en 2012, nuestro sindicato representa a más de 2.000 trabajadores de todas las 
+                    categorías profesionales de la UMA. Somos una voz independiente, democrática y comprometida 
+                    con la mejora de las condiciones laborales y la dignidad del trabajo universitario.
+                </p>
+                <p>
+                    Trabajamos día a día para garantizar salarios justos, condiciones laborales dignas, 
+                    igualdad de oportunidades y que la voz de los trabajadores sea escuchada en todos los 
+                    ámbitos de decisión universitaria.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="siam_logo.png" alt="Logo SIAM">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <h2>¿Qué Hacemos?</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Defensa Laboral</h3>
+                <p>
+                    Representamos y asesoramos a los trabajadores en conflictos laborales, procedimientos 
+                    disciplinarios, reclamaciones salariales y cualquier situación que afecte a sus derechos.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Negociación Colectiva</h3>
+                <p>
+                    Participamos activamente en la negociación de convenios colectivos, mejoras salariales 
+                    y condiciones laborales para todos los sectores de trabajadores universitarios.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Representación Sindical</h3>
+                <p>
+                    Representamos a los trabajadores en comités de empresa, juntas de personal y todos los 
+                    órganos de gobierno universitario donde se toman decisiones que afectan al personal.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Asesoramiento Jurídico</h3>
+                <p>
+                    Ofrecemos asesoramiento legal gratuito en materia laboral, nóminas, contratos, 
+                    prestaciones y cualquier cuestión relacionada con los derechos laborales.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Formación Sindical</h3>
+                <p>
+                    Organizamos cursos, talleres y jornadas de formación sobre derechos laborales, 
+                    seguridad en el trabajo y herramientas para la acción sindical.
+                </p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Salud Laboral</h3>
+                <p>
+                    Velamos por la seguridad y salud en el trabajo, prevenimos riesgos laborales y 
+                    garantizamos condiciones de trabajo seguras y saludables.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values" id="valores">
+        <h2>Nuestros Valores</h2>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-icon">✊</div>
+                <h3>Unidad</h3>
+                <p>La fuerza del sindicato reside en la unión de todos los trabajadores</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">🤲</div>
+                <h3>Solidaridad</h3>
+                <p>Defendemos los derechos de todos los trabajadores sin distinción</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">🗣️</div>
+                <h3>Independencia</h3>
+                <p>Actuamos con autonomía y libertad frente a cualquier poder</p>
+            </div>
+            <div class="value-item">
+                <div class="value-icon">⚖️</div>
+                <h3>Justicia Social</h3>
+                <p>Luchamos por condiciones laborales dignas e igualdad de oportunidades</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna consulta o necesitas ayuda? No dudes en contactarnos</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">📧</div>
+                <strong>Email</strong>
+                <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📱</div>
+                <strong>Teléfono</strong>
+                <p>952 13 45 67</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">📍</div>
+                <strong>Oficina</strong>
+                <p>Campus de Teatinos<br>Universidad de Málaga<br>29071 Málaga</p>
+            </div>
+            <div class="contact-item">
+                <div class="contact-icon">🕒</div>
+                <strong>Horario</strong>
+                <p>Lunes a Viernes<br>9:00 - 14:00<br>16:00 - 19:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SIAM - Sindicato de Apoyo Mutuo de la Universidad de Málaga</p>
+        <p>Defendiendo los derechos y la dignidad del trabajo universitario</p>
+    </footer>
+</body>
+</html>
