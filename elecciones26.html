@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elecciones 2026 - SIAM UMA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #CC4441;
+            --secondary-color: #a83633;
+            --accent-color: #1EA04F;
+            --text-dark: #2c3e50;
+            --text-light: #ecf0f1;
+            --background-light: #f8f9fa;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, rgba(204, 68, 65, 0.08) 0%, rgba(30, 160, 79, 0.08) 100%);
+            border-bottom: 3px solid var(--primary-color);
+            color: var(--text-dark);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .content-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .content-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-box p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-box ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <img src="siam_logo.png" alt="SIAM Logo">
+                <span class="logo-text">SIAM UMA</span>
+            </div>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="elecciones26.html">Elecciones 26</a></li>
+                <li><a href="actividades.html">Actividades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Elecciones Sindicales 2026</h1>
+        <p>Participa en las elecciones sindicales de la Universidad de Málaga</p>
+    </section>
+
+    <!-- Main Content -->
+    <section>
+        <h2>Información Electoral</h2>
+        
+        <div class="content-box">
+            <h3>Fechas Importantes</h3>
+            <p>Las elecciones sindicales se celebrarán próximamente. Mantente informado de las fechas clave:</p>
+            <ul>
+                <li><strong>Presentación de candidaturas:</strong> Pendiente de confirmación</li>
+                <li><strong>Campaña electoral:</strong> Pendiente de confirmación</li>
+                <li><strong>Jornada electoral:</strong> Pendiente de confirmación</li>
+                <li><strong>Escrutinio:</strong> Pendiente de confirmación</li>
+            </ul>
+        </div>
+
+        <div class="content-box">
+            <h3>¿Por qué votar a SIAM?</h3>
+            <p>SIAM representa los valores de solidaridad, apoyo mutuo y defensa de los derechos laborales de todo el personal de la Universidad de Málaga.</p>
+            <ul>
+                <li>Defensa firme de los derechos laborales</li>
+                <li>Apoyo mutuo entre compañeros</li>
+                <li>Independencia sindical</li>
+                <li>Transparencia en todas nuestras acciones</li>
+                <li>Compromiso con la justicia social</li>
+            </ul>
+        </div>
+
+        <div class="content-box">
+            <h3>Nuestra Candidatura</h3>
+            <p>Información sobre nuestra candidatura y programa electoral se publicará próximamente.</p>
+            <p>Si quieres formar parte de SIAM o conocer más sobre nuestra candidatura, no dudes en contactarnos a través de <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
+        </div>
+
+        <div class="content-box">
+            <h3>¿Cómo Votar?</h3>
+            <p>El voto es personal, libre y secreto. Todos los trabajadores de la Universidad de Málaga tienen derecho a participar en las elecciones sindicales.</p>
+            <p>Más información sobre el proceso de votación se publicará conforme se acerquen las fechas electorales.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 SIAM - Sindicato de Apoyo Mutuo de la Universidad de Málaga</p>
+        <p>Defendiendo los derechos y la dignidad de todo el personal universitario</p>
+    </footer>
+</body>
+</html>
