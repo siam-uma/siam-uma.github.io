@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades - SIAM UMA</title>
+    <title>TE Defendemos - SIAM UMA</title>
     <style>
         * {
             margin: 0;
@@ -130,14 +130,15 @@
             border-radius: 2px;
         }
 
-        .activities-grid {
+        /* Services Grid */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .activity-card {
+        .service-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
@@ -146,30 +147,19 @@
             border-top: 4px solid var(--primary-color);
         }
 
-        .activity-card:hover {
+        .service-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .activity-card h3 {
+        .service-card h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
-        .activity-date {
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-card p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .activity-icon {
-            font-size: 2.5rem;
+        .service-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
         }
 
@@ -182,21 +172,11 @@
             margin-top: 4rem;
         }
 
-        footer p {
-            margin: 0.5rem 0;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
             nav ul {
                 flex-direction: column;
-                gap: 1rem;
-                text-align: center;
+                gap: 0.5rem;
             }
 
             .hero h1 {
@@ -204,14 +184,14 @@
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
 
             section h2 {
                 font-size: 2rem;
             }
 
-            .activities-grid {
+            .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -238,66 +218,60 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Actividades SIAM</h1>
-        <p>Conoce nuestras próximas actividades y eventos</p>
+        <h1>TE Defendemos</h1>
+        <p>Nuestros servicios para la defensa de tus derechos laborales</p>
     </section>
 
-    <!-- Activities Section -->
+    <!-- Services Section -->
     <section>
-        <h2>Próximas Actividades</h2>
-        
-        <div class="activities-grid">
-            <div class="activity-card">
-                <div class="activity-icon">📅</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Asamblea General</h3>
-                <p>Reunión ordinaria para informar sobre las últimas novedades sindicales y compartir inquietudes del personal universitario.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Defensa Laboral</h3>
+                <p>
+                    Representamos y asesoramos al personal en conflictos laborales, procedimientos 
+                    disciplinarios, reclamaciones salariales y cualquier situación que afecte a sus derechos.
+                </p>
             </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">📚</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Taller de Derechos Laborales</h3>
-                <p>Sesión informativa sobre los derechos laborales del personal universitario y cómo defenderlos.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Negociación Colectiva</h3>
+                <p>
+                    Participamos activamente en la negociación de convenios colectivos, mejoras salariales 
+                    y condiciones laborales para todos los sectores del personal universitario.
+                </p>
             </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">🤝</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Jornada de Apoyo Mutuo</h3>
-                <p>Encuentro entre compañeros para fortalecer lazos y crear redes de apoyo dentro de la comunidad universitaria.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Representación Sindical</h3>
+                <p>
+                    Representamos al personal en comités de empresa, juntas de personal y todos los 
+                    órganos de gobierno universitario donde se toman decisiones que afectan a la comunidad laboral.
+                </p>
             </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">💬</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Reunión Informativa Electoral</h3>
-                <p>Información sobre las elecciones sindicales 2026 y presentación de nuestra candidatura.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="service-card">
+                <div class="service-icon">💼</div>
+                <h3>Asesoramiento Jurídico</h3>
+                <p>
+                    Ofrecemos asesoramiento legal gratuito en materia laboral, nóminas, contratos, 
+                    prestaciones y cualquier cuestión relacionada con los derechos laborales.
+                </p>
             </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">📢</div>
-                <div class="activity-date">Permanente</div>
-                <h3>Servicio de Atención</h3>
-                <p>Nuestro servicio de atención está disponible para resolver dudas, ofrecer asesoramiento y apoyo en cuestiones laborales.</p>
-                <p><strong>Email:</strong> <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
-                <p><strong>Horario:</strong> Lunes a Viernes, 9:00 - 14:00 y 16:00 - 19:00</p>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Formación Sindical</h3>
+                <p>
+                    Organizamos cursos, talleres y jornadas de formación sobre derechos laborales, 
+                    seguridad en el trabajo y herramientas para la acción sindical.
+                </p>
             </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">🎯</div>
-                <div class="activity-date">Continuo</div>
-                <h3>Afiliación</h3>
-                <p>¿Quieres formar parte de SIAM? Únete a nosotros y contribuye a la defensa de los derechos laborales en la UMA.</p>
-                <p><strong>Contacto:</strong> Escríbenos para más información sobre cómo afiliarte.</p>
+            <div class="service-card">
+                <div class="service-icon">🛡️</div>
+                <h3>Salud Laboral</h3>
+                <p>
+                    Velamos por la seguridad y salud en el trabajo, prevenimos riesgos laborales y 
+                    garantizamos condiciones de trabajo seguras y saludables.
+                </p>
             </div>
         </div>
     </section>
