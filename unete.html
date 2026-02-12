@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TE Escuchamos - SIAM UMA</title>
+    <title>Únete - SIAM UMA</title>
     <style>
         * {
             margin: 0;
@@ -149,6 +149,15 @@
             margin-bottom: 1rem;
         }
 
+        .content-box ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-box li {
+            margin-bottom: 0.5rem;
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -199,6 +208,43 @@
             box-shadow: var(--shadow);
         }
 
+        /* Social Networks */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-card a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-card a:hover {
+            color: var(--accent-color);
+        }
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -227,7 +273,7 @@
                 font-size: 2rem;
             }
 
-            .contact-grid {
+            .contact-grid, .social-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -254,12 +300,23 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>TE Escuchamos</h1>
-        <p>Tu opinión es importante. Contáctanos para consultas, sugerencias o si necesitas ayuda</p>
+        <h1>Únete a SIAM</h1>
+        <p>Forma parte del sindicato de apoyo mutuo de la Universidad de Málaga</p>
     </section>
 
     <!-- Content -->
     <section>
+        <div class="content-box">
+            <h3>¿Por qué afiliarte a SIAM?</h3>
+            <ul>
+                <li><strong>Defensa de tus derechos:</strong> Contarás con el respaldo de un sindicato independiente que defiende tus intereses laborales</li>
+                <li><strong>Asesoramiento gratuito:</strong> Acceso a consultas jurídicas y académicas sin coste</li>
+                <li><strong>Apoyo mutuo:</strong> Formarás parte de una red solidaria de compañeros comprometidos</li>
+                <li><strong>Participación activa:</strong> Tu voz importa en las decisiones sindicales</li>
+                <li><strong>Transparencia:</strong> Información clara sobre todas nuestras acciones y gestión</li>
+            </ul>
+        </div>
+
         <div class="content-box">
             <h3>Información de Contacto</h3>
             <div class="contact-grid">
@@ -287,8 +344,35 @@
         </div>
 
         <div class="content-box">
-            <h3>Envíanos tu Consulta o Sugerencia</h3>
-            <form style="max-width: 600px; margin: 0 auto;">
+            <h3>Síguenos en Redes Sociales</h3>
+            <div class="social-grid">
+                <div class="social-card">
+                    <div class="social-icon">🐦</div>
+                    <h4>Twitter / X</h4>
+                    <p><a href="https://twitter.com/siam_uma" target="_blank">@siam_uma</a></p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📘</div>
+                    <h4>Facebook</h4>
+                    <p><a href="https://facebook.com/siamuma" target="_blank">SIAM UMA</a></p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">📷</div>
+                    <h4>Instagram</h4>
+                    <p><a href="https://instagram.com/siam_uma" target="_blank">@siam_uma</a></p>
+                </div>
+                <div class="social-card">
+                    <div class="social-icon">💼</div>
+                    <h4>LinkedIn</h4>
+                    <p><a href="https://linkedin.com/company/siam-uma" target="_blank">SIAM UMA</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-box">
+            <h3>Contáctanos</h3>
+            <p>Si quieres más información sobre la afiliación, tienes alguna consulta o necesitas ayuda, escríbenos:</p>
+            <form style="max-width: 600px; margin: 2rem auto 0;">
                 <div style="margin-bottom: 1rem;">
                     <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required>
@@ -302,10 +386,10 @@
                 <div style="margin-bottom: 1rem;">
                     <label for="tipo" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Tipo de consulta:</label>
                     <select id="tipo" name="tipo">
+                        <option value="afiliacion">Información sobre afiliación</option>
                         <option value="consulta">Consulta general</option>
                         <option value="asesoria">Asesoría laboral</option>
                         <option value="sugerencia">Sugerencia</option>
-                        <option value="afiliacion">Afiliación</option>
                         <option value="otro">Otro</option>
                     </select>
                 </div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TE Informamos - SIAM UMA</title>
+    <title>Nuestro Compromiso - SIAM UMA</title>
     <style>
         * {
             margin: 0;
@@ -149,14 +149,24 @@
             margin-bottom: 1rem;
         }
 
-        .activities-grid {
+        .content-box ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Program Grid */
+        .program-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
 
-        .activity-card {
+        .program-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
@@ -165,31 +175,29 @@
             border-top: 4px solid var(--primary-color);
         }
 
-        .activity-card:hover {
+        .program-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
         }
 
-        .activity-card h3 {
+        .program-card h3 {
             color: var(--primary-color);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
-        .activity-date {
-            color: var(--accent-color);
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .activity-card p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .activity-icon {
+        .program-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+        }
+
+        .program-card ul {
+            margin-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+
+        .program-card li {
+            margin-bottom: 0.5rem;
         }
 
         /* Footer */
@@ -201,11 +209,25 @@
             margin-top: 4rem;
         }
 
+        footer p {
+            margin: 0.5rem 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
+                text-align: center;
+            }
+
+            .hero {
+                margin-top: 200px;
             }
 
             .hero h1 {
@@ -213,14 +235,14 @@
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             section h2 {
                 font-size: 2rem;
             }
 
-            .activities-grid {
+            .program-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -247,66 +269,98 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>TE Informamos</h1>
-        <p>Mantente al día con nuestras actividades y eventos</p>
+        <h1>Nuestro Compromiso</h1>
+        <p>Nuestro programa para defender y mejorar las condiciones laborales en la UMA</p>
     </section>
 
-    <!-- Content -->
+    <!-- Main Content -->
     <section>
-        <h2>Próximas Actividades</h2>
-        
-        <div class="activities-grid">
-            <div class="activity-card">
-                <div class="activity-icon">📅</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Asamblea General</h3>
-                <p>Reunión ordinaria para informar sobre las últimas novedades sindicales y compartir inquietudes del personal universitario.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+        <div class="content-box">
+            <h3>Nuestra Misión</h3>
+            <p>Somos un grupo de compañeros y compañeras de la UMA comprometidos con la mejora de las condiciones laborales de todo el colectivo, independientemente de categoría profesional.</p>
+            
+            <h4 style="color: var(--primary-color); margin-top: 1.5rem;">Valores Fundamentales</h4>
+            <ul>
+                <li><strong>Igualdad:</strong> A igual trabajo, igual salario, independientemente de categoría</li>
+                <li><strong>Transparencia:</strong> En la gestión sindical y todas las comunicaciones</li>
+                <li><strong>Compromiso:</strong> Con la mejora de las condiciones laborales</li>
+                <li><strong>Responsabilidad:</strong> Por la confianza depositada en nosotros</li>
+            </ul>
+        </div>
+
+        <div class="content-box" style="background: linear-gradient(135deg, rgba(204, 68, 65, 0.1) 0%, rgba(30, 160, 79, 0.1) 100%); border-left: 5px solid var(--primary-color);">
+            <p style="text-align: center; margin-bottom: 0; font-size: 1.2rem;"><strong>📋 Descarga nuestro programa electoral completo</strong></p>
+            <p style="text-align: center; margin: 1rem 0 0 0;"><a href="SiAM_programa_JuntaPDI_UMA2021.pdf" target="_blank" style="color: var(--primary-color); font-weight: bold; font-size: 1.1rem;">Documento del programa (PDF)</a></p>
+        </div>
+
+        <h2>Ejes Programáticos</h2>
+
+        <div class="program-grid">
+            <div class="program-card">
+                <div class="program-icon">🔍</div>
+                <h3>Democratización y Transparencia</h3>
+                <ul>
+                    <li>Transparencia total en presupuestos, contrataciones y gestión universitaria</li>
+                    <li>Publicación de todas las actas y documentación de órganos de gobierno</li>
+                    <li>Retransmisión en directo de sesiones de órganos de representación</li>
+                    <li>Cuentas públicas del sindicato y rendición de cuentas permanente</li>
+                </ul>
             </div>
 
-            <div class="activity-card">
-                <div class="activity-icon">📚</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Taller de Derechos Laborales</h3>
-                <p>Sesión informativa sobre los derechos laborales del personal universitario y cómo defenderlos.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="program-card">
+                <div class="program-icon">⚖️</div>
+                <h3>Conciliación y Calidad de Vida</h3>
+                <ul>
+                    <li>Defensa de la jornada continua eliminando horarios nocturnos</li>
+                    <li>Adaptación de horarios para personal con responsabilidades familiares</li>
+                    <li>Apoyo a la Escuela Infantil y servicios de conciliación</li>
+                    <li>Jornada reducida para personal con familiares dependientes</li>
+                </ul>
             </div>
 
-            <div class="activity-card">
-                <div class="activity-icon">🤝</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Jornada de Apoyo Mutuo</h3>
-                <p>Encuentro entre compañeros para fortalecer lazos y crear redes de apoyo dentro de la comunidad universitaria.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="program-card">
+                <div class="program-icon">💼</div>
+                <h3>Condiciones Laborales Dignas</h3>
+                <ul>
+                    <li>Recuperación del poder adquisitivo perdido</li>
+                    <li>Estructura salarial simplificada para reducir desigualdades</li>
+                    <li>Máximo 240 horas de docencia presencial por curso</li>
+                    <li>Reducción de ratio estudiantes/docente mediante más contrataciones</li>
+                    <li>Reconocimiento de dirección de tesis, TFG y TFM como carga docente</li>
+                </ul>
             </div>
 
-            <div class="activity-card">
-                <div class="activity-icon">💬</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Reunión Informativa Electoral</h3>
-                <p>Información sobre las elecciones sindicales 2026 y presentación de nuestra candidatura.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
+            <div class="program-card">
+                <div class="program-icon">🔬</div>
+                <h3>Investigación de Calidad</h3>
+                <ul>
+                    <li>Rechazo del #Anecazo y métricas basadas solo en índices de impacto</li>
+                    <li>Evaluación de la investigación por sus méritos reales</li>
+                    <li>Fomento de publicación en acceso abierto</li>
+                    <li>Aplicación automática de sexenios sin trámites adicionales</li>
+                </ul>
             </div>
 
-            <div class="activity-card">
-                <div class="activity-icon">📢</div>
-                <div class="activity-date">Permanente</div>
-                <h3>Servicio de Atención</h3>
-                <p>Nuestro servicio de atención está disponible para resolver dudas, ofrecer asesoramiento y apoyo en cuestiones laborales.</p>
-                <p><strong>Email:</strong> <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
-                <p><strong>Horario:</strong> Lunes a Viernes, 9:00 - 14:00 y 16:00 - 19:00</p>
+            <div class="program-card">
+                <div class="program-icon">🏥</div>
+                <h3>Salud y Prevención</h3>
+                <ul>
+                    <li>Lucha contra el acoso laboral y sexual</li>
+                    <li>Estudio sobre el síndrome de desgaste profesional</li>
+                    <li>Mejora de reconocimientos médicos y prevención de riesgos</li>
+                    <li>Eliminación de barreras arquitectónicas</li>
+                </ul>
             </div>
 
-            <div class="activity-card">
-                <div class="activity-icon">🎯</div>
-                <div class="activity-date">Continuo</div>
-                <h3>Afiliación</h3>
-                <p>¿Quieres formar parte de SIAM? Únete a nosotros y contribuye a la defensa de los derechos laborales en la UMA.</p>
-                <p><strong>Contacto:</strong> Escríbenos para más información sobre cómo afiliarte.</p>
+            <div class="program-card">
+                <div class="program-icon">🌱</div>
+                <h3>Universidad Sostenible</h3>
+                <ul>
+                    <li>Fomento de energías renovables en todos los campus</li>
+                    <li>UMA con huella de carbono cero</li>
+                    <li>Transporte sostenible: más bicis y mejor transporte público</li>
+                    <li>Alimentación ecológica y de proximidad en comedores</li>
+                </ul>
             </div>
         </div>
     </section>

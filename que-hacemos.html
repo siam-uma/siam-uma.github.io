@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TE Informamos - SIAM UMA</title>
+    <title>Qué Hacemos - SIAM UMA</title>
     <style>
         * {
             margin: 0;
@@ -130,25 +130,6 @@
             border-radius: 2px;
         }
 
-        .content-box {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            margin-bottom: 2rem;
-        }
-
-        .content-box h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .content-box p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
         .activities-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -192,6 +173,39 @@
             margin-bottom: 1rem;
         }
 
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -201,11 +215,25 @@
             margin-top: 4rem;
         }
 
+        footer p {
+            margin: 0.5rem 0;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             nav ul {
                 flex-direction: column;
                 gap: 0.5rem;
+                text-align: center;
+            }
+
+            .hero {
+                margin-top: 200px;
             }
 
             .hero h1 {
@@ -213,14 +241,14 @@
             }
 
             .hero p {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             section h2 {
                 font-size: 2rem;
             }
 
-            .activities-grid {
+            .activities-grid, .services-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -247,20 +275,60 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>TE Informamos</h1>
-        <p>Mantente al día con nuestras actividades y eventos</p>
+        <h1>Qué Hacemos</h1>
+        <p>Nuestras actividades y servicios para la comunidad universitaria</p>
     </section>
 
-    <!-- Content -->
+    <!-- Services Section -->
     <section>
-        <h2>Próximas Actividades</h2>
+        <h2>Nuestros Servicios</h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🤝</div>
+                <h3>Representación Sindical y Negociación Colectiva</h3>
+                <p>
+                    Representamos al personal en comités de empresa, juntas de personal y órganos de gobierno universitario donde se toman decisiones que afectan a la comunidad laboral. Participamos activamente en la negociación de convenios colectivos, mejoras salariales y condiciones laborales para todos los sectores del personal universitario.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    Nuestro objetivo es garantizar que la voz de los trabajadores sea escuchada, defendiendo la dignidad laboral, la igualdad entre categorías, y creando espacios de diálogo efectivo con la administración universitaria.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Formación Sindical y Talleres</h3>
+                <p>
+                    Organizamos cursos, talleres, charlas informativas y jornadas de formación sobre derechos laborales, herramientas para la acción sindical, y evaluación de investigación.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    Fomentamos una evaluación justa basada en iniciativas como <strong>DORA y COARA</strong>, rechazando métricas basadas únicamente en índices de impacto. Promovemos la ciencia abierta, el acceso libre al conocimiento, y empoderamos al personal para defender sus derechos académicos y laborales.
+                </p>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Asesoramiento Jurídico y Defensa Laboral</h3>
+                <p>
+                    Ofrecemos asesoramiento legal gratuito en materia laboral, nóminas, contratos y prestaciones. Representamos y asesoramos al personal en conflictos laborales, procedimientos disciplinarios, reclamaciones salariales y cualquier situación que afecte a sus derechos.
+                </p>
+                <p style="margin-top: 0.5rem;">
+                    Nuestro equipo de asesores está preparado para acompañar al personal en todas sus dudas y necesidades laborales, desde la firma de un contrato hasta la resolución de conflictos. Trabajamos para garantizar que recibas una atención personalizada, confidencial y comprometida con la defensa de tus intereses y la mejora de tus condiciones de trabajo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section style="background: var(--background-light);">
+        <h2>Actividades y Eventos</h2>
         
         <div class="activities-grid">
             <div class="activity-card">
                 <div class="activity-icon">📅</div>
                 <div class="activity-date">Próximamente</div>
-                <h3>Asamblea General</h3>
-                <p>Reunión ordinaria para informar sobre las últimas novedades sindicales y compartir inquietudes del personal universitario.</p>
+                <h3>Asambleas</h3>
+                <p>Reuniones ordinarias para informar sobre las últimas novedades sindicales y compartir inquietudes del personal universitario.</p>
                 <p><strong>Lugar:</strong> Por confirmar</p>
                 <p><strong>Horario:</strong> Por confirmar</p>
             </div>
@@ -268,17 +336,8 @@
             <div class="activity-card">
                 <div class="activity-icon">📚</div>
                 <div class="activity-date">Próximamente</div>
-                <h3>Taller de Derechos Laborales</h3>
-                <p>Sesión informativa sobre los derechos laborales del personal universitario y cómo defenderlos.</p>
-                <p><strong>Lugar:</strong> Por confirmar</p>
-                <p><strong>Horario:</strong> Por confirmar</p>
-            </div>
-
-            <div class="activity-card">
-                <div class="activity-icon">🤝</div>
-                <div class="activity-date">Próximamente</div>
-                <h3>Jornada de Apoyo Mutuo</h3>
-                <p>Encuentro entre compañeros para fortalecer lazos y crear redes de apoyo dentro de la comunidad universitaria.</p>
+                <h3>Talleres de Derechos Laborales</h3>
+                <p>Sesiones informativas sobre los derechos laborales del personal universitario y cómo defenderlos.</p>
                 <p><strong>Lugar:</strong> Por confirmar</p>
                 <p><strong>Horario:</strong> Por confirmar</p>
             </div>
@@ -286,27 +345,35 @@
             <div class="activity-card">
                 <div class="activity-icon">💬</div>
                 <div class="activity-date">Próximamente</div>
-                <h3>Reunión Informativa Electoral</h3>
-                <p>Información sobre las elecciones sindicales 2026 y presentación de nuestra candidatura.</p>
+                <h3>Coloquios y Charlas</h3>
+                <p>Encuentros con expertos y autoridades académicas para dialogar sobre temas relevantes para la comunidad universitaria, como la mejora de la evaluación académica con la Directora de la ANECA.</p>
                 <p><strong>Lugar:</strong> Por confirmar</p>
                 <p><strong>Horario:</strong> Por confirmar</p>
             </div>
 
             <div class="activity-card">
                 <div class="activity-icon">📢</div>
-                <div class="activity-date">Permanente</div>
-                <h3>Servicio de Atención</h3>
-                <p>Nuestro servicio de atención está disponible para resolver dudas, ofrecer asesoramiento y apoyo en cuestiones laborales.</p>
-                <p><strong>Email:</strong> <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
-                <p><strong>Horario:</strong> Lunes a Viernes, 9:00 - 14:00 y 16:00 - 19:00</p>
+                <div class="activity-date">Según necesidad</div>
+                <h3>Manifestaciones y Movilizaciones</h3>
+                <p>Participamos en manifestaciones y movilizaciones para defender los derechos laborales y apoyar causas justas, tanto dentro como fuera de la UMA.</p>
+                <p><strong>Información:</strong> Comunicaciones por email y redes sociales</p>
             </div>
 
             <div class="activity-card">
-                <div class="activity-icon">🎯</div>
+                <div class="activity-icon">🤲</div>
                 <div class="activity-date">Continuo</div>
-                <h3>Afiliación</h3>
-                <p>¿Quieres formar parte de SIAM? Únete a nosotros y contribuye a la defensa de los derechos laborales en la UMA.</p>
-                <p><strong>Contacto:</strong> Escríbenos para más información sobre cómo afiliarte.</p>
+                <h3>Apoyo a Causas Sociales</h3>
+                <p>Colaboramos y apoyamos causas justas fuera de la UMA, contribuyendo a la solidaridad y justicia social en nuestra comunidad.</p>
+                <p><strong>Contacto:</strong> <a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
+            </div>
+
+            <div class="activity-card">
+                <div class="activity-icon">🤝</div>
+                <div class="activity-date">Próximamente</div>
+                <h3>Jornadas de Apoyo Mutuo</h3>
+                <p>Encuentros entre compañeros para fortalecer lazos y crear redes de apoyo dentro de la comunidad universitaria.</p>
+                <p><strong>Lugar:</strong> Por confirmar</p>
+                <p><strong>Horario:</strong> Por confirmar</p>
             </div>
         </div>
     </section>
