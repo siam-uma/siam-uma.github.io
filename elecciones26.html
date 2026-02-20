@@ -307,6 +307,14 @@
                 padding: 0 1rem;
             }
 
+            .logo-container img {
+                height: 42px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -314,21 +322,22 @@
             nav ul {
                 position: fixed;
                 top: 0;
-                left: -260px;
+                left: 0;
                 height: 100vh;
                 width: 240px;
                 background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
                 flex-direction: column;
                 gap: 0;
                 padding: 5rem 0 2rem;
-                transition: left 0.3s ease;
+                transform: translateX(-105%);
+                transition: transform 0.3s ease;
                 box-shadow: 4px 0 12px rgba(0,0,0,0.2);
                 z-index: 1050;
                 margin: 0;
             }
 
             nav ul.open {
-                left: 0;
+                transform: translateX(0);
             }
 
             nav ul li {
@@ -385,15 +394,15 @@
     <!-- Header -->
     <header>
         <nav>
+            <div class="logo-container">
+                <img src="siam_logo.png" alt="SIAM Logo">
+                <span class="logo-text">SIAM UMA</span>
+            </div>
             <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="logo-container">
-                <img src="siam_logo.png" alt="SIAM Logo">
-                <span class="logo-text">SIAM UMA</span>
-            </div>
             <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
