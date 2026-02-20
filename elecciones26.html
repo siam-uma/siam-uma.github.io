@@ -1,6 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+        <style>
+            /* ...existing code... */
+            .hamburger {
+                display: none;
+                flex-direction: column;
+                justify-content: center;
+                cursor: pointer;
+                width: 36px;
+                height: 36px;
+                z-index: 1100;
+            }
+            .hamburger span {
+                height: 4px;
+                width: 100%;
+                background: white;
+                margin: 5px 0;
+                border-radius: 2px;
+                transition: 0.4s;
+            }
+            @media (max-width: 768px) {
+                nav ul {
+                    position: fixed;
+                    left: -220px;
+                    top: 0;
+                    height: 100vh;
+                    width: 200px;
+                    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                    flex-direction: column;
+                    gap: 1.5rem;
+                    padding-top: 80px;
+                    transition: left 0.3s;
+                    box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+                    z-index: 1050;
+                }
+                nav ul.open {
+                    left: 0;
+                }
+                .hamburger {
+                    display: flex;
+                }
+            }
+        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elecciones 2026 - SIAM UMA</title>
@@ -314,7 +356,12 @@
                 <img src="siam_logo.png" alt="SIAM Logo">
                 <span class="logo-text">SIAM UMA</span>
             </div>
-            <ul>
+            <div class="hamburger" id="hamburger-menu" aria-label="Abrir menú" tabindex="0">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="que-hacemos.html">Qué Hacemos</a></li>
@@ -324,6 +371,32 @@
             </ul>
         </nav>
     </header>
+    <script>
+        // Menú hamburguesa para móviles
+        const hamburger = document.getElementById('hamburger-menu');
+        const navList = document.getElementById('nav-list');
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('open');
+        });
+        hamburger.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                navList.classList.toggle('open');
+            }
+        });
+        // Cerrar menú al hacer clic en un enlace (solo móvil)
+        navList.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) navList.classList.remove('open');
+            });
+        });
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth > 768) return;
+            if (!navList.contains(e.target) && !hamburger.contains(e.target)) {
+                navList.classList.remove('open');
+            }
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero">
