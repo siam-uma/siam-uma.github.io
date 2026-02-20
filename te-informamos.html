@@ -82,6 +82,42 @@
             color: var(--accent-color);
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            z-index: 1100;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: white;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.4s;
+        }
+
+        /* Overlay for mobile menu */
+        .nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            /* Keep overlay below the fixed header/menu so it doesn't intercept taps */
+            z-index: 990;
+        }
+
+        .nav-overlay.active {
+            display: block;
+        }
+
         /* Hero Section */
         .hero {
             margin-top: 80px;
@@ -203,9 +239,70 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Mobile drawer navigation overrides */
+            nav {
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0 1rem;
+            }
+
+            .logo-container img {
+                height: 42px;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
+            }
+
+            .hamburger {
+                display: flex;
+                position: relative;
+                z-index: 1201;
+            }
+
             nav ul {
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 240px;
+                background: linear-gradient(180deg, var(--primary-color) 0%, var(--secondary-color) 100%);
                 flex-direction: column;
-                gap: 0.5rem;
+                gap: 0;
+                padding: 5rem 0 2rem;
+                transform: translateX(-105%);
+                transition: transform 0.3s ease;
+                box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+                z-index: 1200;
+                margin: 0;
+                text-align: left;
+            }
+
+            nav ul.open {
+                transform: translateX(0);
+            }
+
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,0.15);
+            }
+
+            nav ul li:first-child {
+                border-top: 1px solid rgba(255,255,255,0.15);
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-size: 1.05rem;
+                color: white;
+            }
+
+            nav ul li a:hover {
+                background: rgba(255,255,255,0.12);
+                color: white;
             }
 
             .hero h1 {
@@ -227,14 +324,22 @@
     </style>
 </head>
 <body>
+    <!-- Mobile nav overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+
     <!-- Header -->
     <header>
         <nav>
+            <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <div class="logo-container">
                 <img src="siam_logo.png" alt="SIAM Logo">
                 <span class="logo-text">SIAM UMA</span>
             </div>
-            <ul>
+            <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="que-hacemos.html">Qué Hacemos</a></li>
@@ -244,6 +349,38 @@
             </ul>
         </nav>
     </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger-menu');
+            const navList = document.getElementById('nav-list');
+            const overlay = document.getElementById('nav-overlay');
+
+            if (!hamburger || !navList || !overlay) return;
+
+            function openMenu() {
+                navList.classList.add('open');
+                overlay.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+            }
+
+            function closeMenu() {
+                navList.classList.remove('open');
+                overlay.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+
+            hamburger.addEventListener('click', () => {
+                navList.classList.contains('open') ? closeMenu() : openMenu();
+            });
+
+            overlay.addEventListener('click', closeMenu);
+
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        });
+    </script>
 
     <!-- Hero Section -->
     <section class="hero">
