@@ -1,48 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <style>
-            /* ...existing code... */
-            .hamburger {
-                display: none;
-                flex-direction: column;
-                justify-content: center;
-                cursor: pointer;
-                width: 36px;
-                height: 36px;
-                z-index: 1100;
-            }
-            .hamburger span {
-                height: 4px;
-                width: 100%;
-                background: white;
-                margin: 5px 0;
-                border-radius: 2px;
-                transition: 0.4s;
-            }
-            @media (max-width: 768px) {
-                nav ul {
-                    position: fixed;
-                    left: -220px;
-                    top: 0;
-                    height: 100vh;
-                    width: 200px;
-                    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-                    flex-direction: column;
-                    gap: 1.5rem;
-                    padding-top: 80px;
-                    transition: left 0.3s;
-                    box-shadow: 2px 0 8px rgba(0,0,0,0.08);
-                    z-index: 1050;
-                }
-                nav ul.open {
-                    left: 0;
-                }
-                .hamburger {
-                    display: flex;
-                }
-            }
-        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elecciones 2026 - SIAM UMA</title>
@@ -122,6 +80,28 @@
 
         nav a:hover {
             color: var(--accent-color);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            z-index: 1100;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: white;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.4s;
         }
 
         /* Hero Section */
@@ -312,14 +292,55 @@
         /* Responsive */
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
-                gap: 1rem;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                padding: 0 1rem !important;
             }
 
             nav ul {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
+                position: fixed !important;
+                left: -220px !important;
+                top: 80px !important;
+                height: calc(100vh - 80px) !important;
+                width: 200px !important;
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+                flex-direction: column !important;
+                gap: 1.5rem !important;
+                padding: 2rem 1rem !important;
+                transition: left 0.3s ease !important;
+                box-shadow: 2px 0 8px rgba(0,0,0,0.1) !important;
+                z-index: 1050 !important;
+                text-align: left !important;
+                margin: 0 !important;
+                display: flex !important;
+            }
+
+            nav ul.open {
+                left: 0 !important;
+            }
+
+            nav ul li {
+                margin: 0 !important;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+            }
+
+            .hamburger {
+                display: flex !important;
+                order: -1;
+            }
+
+            .logo-container {
+                order: 0;
+                flex: 1;
+            }
+
+            .logo-text {
+                font-size: 1.2rem;
             }
 
             .hero {
@@ -356,11 +377,11 @@
                 <img src="siam_logo.png" alt="SIAM Logo">
                 <span class="logo-text">SIAM UMA</span>
             </div>
-            <div class="hamburger" id="hamburger-menu" aria-label="Abrir menú" tabindex="0">
+            <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
             <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
@@ -372,29 +393,34 @@
         </nav>
     </header>
     <script>
-        // Menú hamburguesa para móviles
-        const hamburger = document.getElementById('hamburger-menu');
-        const navList = document.getElementById('nav-list');
-        hamburger.addEventListener('click', () => {
-            navList.classList.toggle('open');
-        });
-        hamburger.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger-menu');
+            const navList = document.getElementById('nav-list');
+
+            if (!hamburger || !navList) return;
+
+            hamburger.addEventListener('click', (e) => {
+                e.stopPropagation();
                 navList.classList.toggle('open');
-            }
-        });
-        // Cerrar menú al hacer clic en un enlace (solo móvil)
-        navList.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) navList.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', navList.classList.contains('open'));
             });
-        });
-        // Cerrar menú al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (window.innerWidth > 768) return;
-            if (!navList.contains(e.target) && !hamburger.contains(e.target)) {
-                navList.classList.remove('open');
-            }
+
+            navList.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
+                        navList.classList.remove('open');
+                        hamburger.setAttribute('aria-expanded', 'false');
+                    }
+                });
+            });
+
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth > 768) return;
+                if (!navList.contains(e.target) && !hamburger.contains(e.target)) {
+                    navList.classList.remove('open');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
         });
     </script>
 
@@ -617,17 +643,16 @@
             </div>
             <div class="candidate-card">
                 <div class="candidate-avatar">
-                    <!-- Male avatar icon (SVG) -->
+                    <!-- Neutral avatar icon (SVG) -->
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="40" fill="#90CAF9"/>
+                        <circle cx="40" cy="40" r="40" fill="#9FA8DA"/>
                         <ellipse cx="40" cy="35" rx="18" ry="16" fill="#FFF"/>
-                        <ellipse cx="40" cy="35" rx="10" ry="9" fill="#90CAF9"/>
+                        <ellipse cx="40" cy="35" rx="10" ry="9" fill="#9FA8DA"/>
                         <ellipse cx="40" cy="55" rx="14" ry="10" fill="#FFF"/>
-                        <ellipse cx="40" cy="55" rx="8" ry="6" fill="#90CAF9"/>
+                        <ellipse cx="40" cy="55" rx="8" ry="6" fill="#9FA8DA"/>
                         <circle cx="34" cy="33" r="2" fill="#2c3e50"/>
                         <circle cx="46" cy="33" r="2" fill="#2c3e50"/>
                         <path d="M36 40 Q40 44 44 40" stroke="#2c3e50" stroke-width="2" fill="none"/>
-                        <rect x="30" y="22" width="20" height="8" rx="4" fill="#2c3e50"/>
                     </svg>
                 </div>
                 <h4>David Bueno Vallejo</h4>
@@ -715,13 +740,13 @@
             </div>
             <div class="candidate-card">
                 <div class="candidate-avatar">
-                    <!-- Female avatar icon (SVG) -->
+                    <!-- Neutral avatar icon (SVG) -->
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="40" cy="40" r="40" fill="#F8BBD0"/>
+                        <circle cx="40" cy="40" r="40" fill="#9FA8DA"/>
                         <ellipse cx="40" cy="35" rx="18" ry="16" fill="#FFF"/>
-                        <ellipse cx="40" cy="35" rx="10" ry="9" fill="#F8BBD0"/>
+                        <ellipse cx="40" cy="35" rx="10" ry="9" fill="#9FA8DA"/>
                         <ellipse cx="40" cy="55" rx="14" ry="10" fill="#FFF"/>
-                        <ellipse cx="40" cy="55" rx="8" ry="6" fill="#F8BBD0"/>
+                        <ellipse cx="40" cy="55" rx="8" ry="6" fill="#9FA8DA"/>
                         <circle cx="34" cy="33" r="2" fill="#2c3e50"/>
                         <circle cx="46" cy="33" r="2" fill="#2c3e50"/>
                         <path d="M36 40 Q40 44 44 40" stroke="#2c3e50" stroke-width="2" fill="none"/>
