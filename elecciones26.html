@@ -295,7 +295,8 @@
             position: fixed;
             inset: 0;
             background: rgba(0,0,0,0.4);
-            z-index: 1040;
+            /* Keep overlay below the fixed header/menu so it doesn't intercept taps */
+            z-index: 990;
         }
         .nav-overlay.active {
             display: block;
@@ -305,6 +306,8 @@
         @media (max-width: 768px) {
             nav {
                 padding: 0 1rem;
+                justify-content: flex-start;
+                gap: 0.75rem;
             }
 
             .logo-container img {
@@ -317,6 +320,8 @@
 
             .hamburger {
                 display: flex;
+                position: relative;
+                z-index: 1201;
             }
 
             nav ul {
@@ -332,7 +337,7 @@
                 transform: translateX(-105%);
                 transition: transform 0.3s ease;
                 box-shadow: 4px 0 12px rgba(0,0,0,0.2);
-                z-index: 1050;
+                z-index: 1200;
                 margin: 0;
             }
 
@@ -394,15 +399,15 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="siam_logo.png" alt="SIAM Logo">
-                <span class="logo-text">SIAM UMA</span>
-            </div>
             <button class="hamburger" id="hamburger-menu" aria-label="Abrir menú" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <div class="logo-container">
+                <img src="siam_logo.png" alt="SIAM Logo">
+                <span class="logo-text">SIAM UMA</span>
+            </div>
             <ul id="nav-list">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
