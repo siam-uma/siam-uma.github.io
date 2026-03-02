@@ -220,6 +220,7 @@
             border-radius: 5px;
             font-size: 1rem;
             font-family: inherit;
+            background: white;
         }
 
         form textarea {
@@ -453,81 +454,28 @@
                 <li><strong>Transparencia:</strong> Información clara sobre todas nuestras acciones y gestión</li>
             </ul>
             <p style="margin-top:1.5rem;text-align:center;">
-                <a href="HOJA_AFILIACIÓN_Siam.pdf" download style="background:var(--accent-color);color:white;padding:0.75rem 1.5rem;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:var(--shadow);display:inline-block;">Descargar hoja de afiliación</a>
+                <a href="HOJA_AFILIACIÓN_Siam.pdf" download style="background:#CC4441;color:white;padding:0.75rem 1.5rem;border-radius:30px;text-decoration:none;font-weight:bold;box-shadow:var(--shadow);display:inline-block;">Descargar hoja de afiliación</a>
             </p>
         </div>
-
         <div class="content-box">
-            <h3>Información de Contacto</h3>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <strong>Email</strong>
-                    <p><a href="mailto:info@siam-uma.es" style="color: var(--primary-color);">info@siam-uma.es</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <strong>Teléfono</strong>
-                    <p>952 13 45 67</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <strong>Oficina</strong>
-                    <p>Campus de Teatinos<br>Universidad de Málaga<br>29071 Málaga</p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">🕒</div>
-                    <strong>Horario</strong>
-                    <p>Lunes a Viernes<br>9:00 - 14:00<br>16:00 - 19:00</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-box">
-            <h3>Síguenos en Redes Sociales</h3>
-            <div class="social-grid">
-                <div class="social-card">
-                    <div class="social-icon">🐦</div>
-                    <h4>Twitter / X</h4>
-                    <p><a href="https://twitter.com/siam_uma" target="_blank">@siam_uma</a></p>
-                </div>
-                <div class="social-card">
-                    <div class="social-icon">📘</div>
-                    <h4>Facebook</h4>
-                    <p><a href="https://facebook.com/siamuma" target="_blank">SIAM UMA</a></p>
-                </div>
-                <div class="social-card">
-                    <div class="social-icon">📷</div>
-                    <h4>Instagram</h4>
-                    <p><a href="https://instagram.com/siam_uma" target="_blank">@siam_uma</a></p>
-                </div>
-                <div class="social-card">
-                    <div class="social-icon">💼</div>
-                    <h4>LinkedIn</h4>
-                    <p><a href="https://linkedin.com/company/siam-uma" target="_blank">SIAM UMA</a></p>
-                </div>
-            </div>
-        </div>
-
-        <div class="content-box">
-            <h3>Contáctanos</h3>
+            <h3 style="color: #CC4441;">Contáctanos</h3>
             <p>Si quieres más información sobre la afiliación, tienes alguna consulta o necesitas ayuda, escríbenos:</p>
-            <form action="https://formsubmit.co/siam@uma.es" method="POST" style="background: #e8f5e9; border: 2px solid #1EA04F; border-radius: 0.5rem; padding: 1.5rem; max-width: 600px; margin: 2rem auto 0;">
+            <form action="https://formsubmit.co/siam@uma.es" method="POST" style="background: white; border: 2px solid #CC4441; border-radius: 0.5rem; padding: 1.5rem; max-width: 600px; margin: 2rem auto 0;">
                 <!-- Asunto personalizado -->
                 <input type="hidden" name="_subject" value="SIAM UMA - Nueva consulta desde Únete">
                 <!-- Redirección tras enviar -->
                 <input type="hidden" name="_next" value="https://siam-uma.github.io/gracias.html">
                 <div style="margin-bottom: 1rem;">
-                    <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Nombre:</label>
-                    <input type="text" id="nombre" name="Nombre" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
+                    <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #CC4441;">Nombre:</label>
+                    <input type="text" id="nombre" name="Nombre" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #CC4441;">
                 </div>
                 <div style="margin-bottom: 1rem;">
-                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Email:</label>
-                    <input type="email" id="email" name="Email" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #CC4441;">Email:</label>
+                    <input type="email" id="email" name="Email" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #CC4441;">
                 </div>
                 <div style="margin-bottom: 1rem;">
-                    <label for="tipo" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Tipo de consulta:</label>
-                    <select id="tipo" name="Tipo de consulta" style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
+                    <label for="tipo" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #CC4441;">Tipo de consulta:</label>
+                    <select id="tipo" name="Tipo de consulta" style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #CC4441;">
                         <option value="afiliacion">Información sobre afiliación</option>
                         <option value="consulta">Consulta general</option>
                         <option value="asesoria">Asesoría laboral</option>
@@ -536,11 +484,11 @@
                     </select>
                 </div>
                 <div style="margin-bottom: 1rem;">
-                    <label for="mensaje" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Mensaje:</label>
-                    <textarea id="mensaje" name="Mensaje" rows="6" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;"></textarea>
+                    <label for="mensaje" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #CC4441;">Mensaje:</label>
+                    <textarea id="mensaje" name="Mensaje" rows="6" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #CC4441;"></textarea>
                 </div>
                 <div style="text-align: center;">
-                    <button type="submit" style="background:#1EA04F; color:white; border:none; border-radius:0.3rem; padding:0.7rem 1.5rem; font-weight:bold; cursor:pointer;">Enviar Mensaje</button>
+                    <button type="submit" style="background:#CC4441; color:white; border:none; border-radius:0.3rem; padding:0.7rem 1.5rem; font-weight:bold; cursor:pointer;">Enviar Mensaje</button>
                 </div>
             </form>
         </div>
