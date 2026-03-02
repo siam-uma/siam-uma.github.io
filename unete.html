@@ -512,20 +512,22 @@
         <div class="content-box">
             <h3>Contáctanos</h3>
             <p>Si quieres más información sobre la afiliación, tienes alguna consulta o necesitas ayuda, escríbenos:</p>
-            <form action="mailto:siam@uma.es" method="post" enctype="text/plain" style="max-width: 600px; margin: 2rem auto 0;">
+            <form action="https://formsubmit.co/siam@uma.es" method="POST" style="background: #e8f5e9; border: 2px solid #1EA04F; border-radius: 0.5rem; padding: 1.5rem; max-width: 600px; margin: 2rem auto 0;">
+                <!-- Asunto personalizado -->
+                <input type="hidden" name="_subject" value="SIAM UMA - Nueva consulta desde Únete">
+                <!-- Redirección tras enviar -->
+                <input type="hidden" name="_next" value="https://siam-uma.github.io/gracias.html">
                 <div style="margin-bottom: 1rem;">
-                    <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="nombre" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Nombre:</label>
+                    <input type="text" id="nombre" name="Nombre" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
                 </div>
-                
                 <div style="margin-bottom: 1rem;">
-                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Email:</label>
+                    <input type="email" id="email" name="Email" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
                 </div>
-                
                 <div style="margin-bottom: 1rem;">
-                    <label for="tipo" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Tipo de consulta:</label>
-                    <select id="tipo" name="tipo">
+                    <label for="tipo" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Tipo de consulta:</label>
+                    <select id="tipo" name="Tipo de consulta" style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;">
                         <option value="afiliacion">Información sobre afiliación</option>
                         <option value="consulta">Consulta general</option>
                         <option value="asesoria">Asesoría laboral</option>
@@ -533,14 +535,12 @@
                         <option value="otro">Otro</option>
                     </select>
                 </div>
-                
                 <div style="margin-bottom: 1rem;">
-                    <label for="mensaje" style="display: block; margin-bottom: 0.5rem; font-weight: bold;">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                    <label for="mensaje" style="display: block; margin-bottom: 0.5rem; font-weight: bold; color: #1EA04F;">Mensaje:</label>
+                    <textarea id="mensaje" name="Mensaje" rows="6" required style="width:100%; padding:0.75rem; border-radius:0.3rem; border:1px solid #1EA04F;"></textarea>
                 </div>
-                
                 <div style="text-align: center;">
-                    <button type="submit">Enviar Mensaje</button>
+                    <button type="submit" style="background:#1EA04F; color:white; border:none; border-radius:0.3rem; padding:0.7rem 1.5rem; font-weight:bold; cursor:pointer;">Enviar Mensaje</button>
                 </div>
             </form>
         </div>
