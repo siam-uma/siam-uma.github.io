@@ -53,6 +53,51 @@
             line-height: 1.6;
         }
         
+        .intro-box {
+            background: white;
+            border: 2px solid var(--primary-color);
+            border-radius: 0.8rem;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        
+        .intro-box p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .intro-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .intro-box strong {
+            color: var(--primary-color);
+        }
+        
+        .intro-box .button-group {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        .intro-box .cta-button {
+            margin: 0;
+        }
+        
+        .highlights-section {
+            margin-top: 2rem;
+        }
+        
+        .highlights-section h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
         .headlines-list {
             list-style: none;
             padding: 0;
@@ -118,6 +163,34 @@
             box-shadow: 0 4px 12px rgba(204,68,65,0.3);
         }
         
+        .special-event {
+            background: rgba(30, 160, 79, 0.1);
+            border: 2px solid var(--accent-color);
+            border-radius: 0.8rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .special-event i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .special-event h3 {
+            color: var(--primary-color);
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .special-event p {
+            color: #555;
+            margin: 0.5rem 0 0 0;
+            font-size: 0.95rem;
+        }
+        
         .footer {
             margin-top: 2rem;
             padding-top: 1.2rem;
@@ -139,22 +212,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>📬 Boletín SiAM — Abril 2026</h1>
-        <p class="subtitle">Titulares de nuestras actividades</p>
         
-        <p class="intro">
-            Este mes hemos estado trabajando en múltiples frentes para defender tus derechos y mejorar las condiciones laborales. 
-            Aquí te dejamos un resumen de los temas principales.
-        </p>
+        <div class="intro-box">
+        <h1>📬 Boletín SiAM — Abril 2026</h1>
+            <p>
+                Con este boletín mensual queremos manteneros informados sobre nuestras actividades y las iniciativas de SiAM. 
+                Este mes hemos estado trabajando en múltiples frentes para defender vuestros derechos y mejorar las condiciones laborales.
+            </p>
+            
+            <p>
+                <strong>✨ Además, nos complace anunciar que hemos decidido crear un <strong>Café con SiAM</strong> mensual</strong>, 
+                un nuevo espacio de apoyo mutuo donde podráis compartir inquietudes, proponer acciones y conectar con la comunidad. 
+                <strong>La primera reunión será el viernes 24 de abril a las 11:00 a.m.</strong>
+            </p>
+        </div>
+        
+        <div class="highlights-section">
+            <p style="text-align: center; color: #555; margin-bottom: 2rem;">
+                A continuación se resumen las principales acciones. Para tener más detalles 
+                <a href="newsletter1.html" style="color: var(--primary-color); font-weight: bold;">leer el boletín completo aquí</a>.
+            </p>
+            
         
         <ul class="headlines-list">
-            <li>
-                <i class="fas fa-mug-hot"></i>
-                <div>
-                    <span>Café con SiAM</span>
-                    <p style="font-size: 0.9rem; color: #666; margin: 0.3rem 0 0 0;">Lanzamos nuestro nuevo grupo de apoyo mutuo el viernes 24 de abril. Un espacio mensual para compartir inquietudes y proponer acciones.</p>
-                </div>
-            </li>
             <li>
                 <i class="fas fa-university"></i>
                 <div>
@@ -198,10 +278,6 @@
                 </div>
             </li>
         </ul>
-        
-        <div class="cta-section">
-            <p><strong>¿Quieres más información?</strong></p>
-            <a href="newsletter1.html" class="cta-button">Lee el boletín completo</a>
         </div>
         
         <div class="footer">
